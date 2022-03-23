@@ -1,0 +1,23 @@
+<form [formGroup]="frmLogin" (ngSubmit)="getData()">
+  <input type="text" placeholder=" Enter name" formControlName="name" />
+  <br />
+  <span *ngIf="name && name.invalid && name.touched" style="color:red"
+    >Enter valid Name</span
+  >
+  <br /><br />
+
+  <input
+    type="password"
+    placeholder="Enter password"
+    formControlName="password"
+  />
+  <br />
+  <span
+    *ngIf="password && password.invalid && password.touched"
+    style="color:red"
+    >Enter valid Password</span
+  >
+  <br />
+
+  <button [disabled]="frmLogin.invalid">Login</button>
+</form>
